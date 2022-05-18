@@ -1,0 +1,25 @@
+Q2. The best case time complexity O(log(n)) where n is the vector size and k is the index of the kth minimum element. Consider a vector in which the pivot value evenly divides the original vector into the left vector and right vector. Then the the recusive call will only return half the size of the original vector making the time complexity log(n) at most the function would be called k times so the time complexity would be O(klogn) but k i a constant.
+
+For example:
+Given a vector [5,4,6,3,7,2,8,1]
+After the first recursive call
+left = [4,3,2,1]
+right = [6,7,8], k=0
+then for the second recursive call only [6,7,8] will be returned.
+
+Q3. The worst case time complexity O((n-k)*n) where n is the size of the vector and k is the index for the minimum value that is being searched for. Consider a vector that is in decreasing order, the recursive call will only reduce the vector size by n-1. So at each recursive call, the vector size n will need to be pushed onto the vectors each time. This will happen linearly until the size of the vector is less than k. 
+
+For example:
+Given a vector [10,9,8,7,6,5,4,3,2,1] 
+After the first recurisve call,
+left = [9,8,7,6,5,4,3,2,1], k = 5
+After the second recurisive call,
+left = [8,7,6,5,4,3,2,1], k = 5
+The vector will continue to decrease or drop the first element until there are 4 elements left. Then the middle vectors first element is returned.
+
+Q4. The average case O(k*n) where n is the size of the vector. Because the vector is not sorted, it is not garanteed that the vector values will be split evenly. If most of the el < pivot then most of the values will be placed in the left vector and then left-1 will be returned. If most of the vales el> pivot, then most of the values will be added to the right vector minus any values that were smaller than the pivot. Then k will be decremented and the new k value as well as the right vector will be returned. 
+
+
+Q5. The worst space complexity is O(n) where n is the size of the vector because three vectors are being created within the function. At each call the original vector elements are distributed into the 3 different vectors, middle, left and, right. So either way all the elements in the vector will have to be pushed to a new vector which makes the space complexity O(n).
+
+Q6. The mystery code takes an integer k where k>=0 and a vector and returns the kth minimum value in the vector. So when k = 5, starting from 0, the 5th smallest integer will be returned.

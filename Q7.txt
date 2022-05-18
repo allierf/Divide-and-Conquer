@@ -1,0 +1,15 @@
+1. target = 1
+left = 0, right = 2, middle = 1
+left = 0, right = 0, middle = 0
+
+2. target = 4
+left = 0, right = 2, middle = 1
+left = 2, right = 2, middle = 2
+
+3. target = 0
+left = 0, right = 2, middle = 1
+left = 0, right = 0, middle = 0
+
+4. target = 6
+left = 0, right = 2, middle = 1
+left = 2, right = 2, middle = 2
